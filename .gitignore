@@ -1,0 +1,20 @@
+# Entry Point
+/index.php
+# Log File
+application/logs/*.log
+application/logs/*.json
+# User 
+images/users/*.*
+!images/users/no-photo.png
+# Logo
+images/logos/*.*
+!images/logos/logo.png
+# System File
+.DS_Store
+# Temporary Log
+tmp/*
+!tmp/index.html
+
+# Config
+application/config/database.php
+application/config/config.php
