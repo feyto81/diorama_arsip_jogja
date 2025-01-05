@@ -45,7 +45,7 @@ class No_kartu_multi_pcare extends MY_Controller
       'secret_key' => $service_bpjs['secret_key'],
       'base_url' => $service_bpjs['base_url'],
       'service_name' => $service_bpjs['service_name'],
-'user_key' => $service_bpjs['user_key'],
+      'user_key' => $service_bpjs['user_key'],
     ];
 
     $peserta = new Nsulistiyawan\Bpjs\VClaim\Rujukan($vclaim_conf);

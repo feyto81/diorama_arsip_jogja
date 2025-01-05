@@ -39,6 +39,7 @@ class Klaim_jaminan_jasa_raharja extends MY_Controller
   {
     $tgl_mulai = $this->input->post('tgl_mulai', true);
     $tgl_akhir = $this->input->post('tgl_akhir', true);
+    $jns_pelayanan = $this->input->post('jns_pelayanan', true);
     //
     $service_bpjs = $this->m_service_bpjs->get_first();
     $vclaim_conf = [
@@ -46,11 +47,11 @@ class Klaim_jaminan_jasa_raharja extends MY_Controller
       'secret_key' => $service_bpjs['secret_key'],
       'base_url' => $service_bpjs['base_url'],
       'service_name' => $service_bpjs['service_name'],
-'user_key' => $service_bpjs['user_key'],
+      'user_key' => $service_bpjs['user_key'],
     ];
 
     $peserta = new Nsulistiyawan\Bpjs\VClaim\Monitoring($vclaim_conf);
-    $result = $peserta->dataKlaimJasaRaharja($tgl_mulai, $tgl_akhir);
+    $result = $peserta->dataKlaimJasaRaharja($jns_pelayanan, $tgl_mulai, $tgl_akhir);
 
     echo json_encode($result, JSON_PRETTY_PRINT);
   }

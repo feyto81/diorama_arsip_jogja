@@ -41,7 +41,7 @@
                     <div class="form-group row">
                       <label for="menu" class="col-sm-4 col-form-label text-right mt-n2">Tanggal <span class="text-danger">*</span></label>
                       <div class="col-sm-7">
-                        <input type="text" class="form-control form-control-sm" name="tanggal" id="tanggal" value="">
+                        <input type="text" class="form-control form-control-sm datepicker" name="tanggal" id="tanggal" value="">
                       </div>
                     </div>
                   </div>

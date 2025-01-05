@@ -117,35 +117,68 @@
                 <hr>
                 <h4>Config Antrean</h4>
                 <div class="form-group row">
-                  <label for="menu" class="col-sm-2 col-form-label text-right">Cons ID Antrean <span class="text-danger">*</span></label>
+                  <label for="menu" class="col-sm-2 col-form-label text-right">Cons ID Antrean</label>
                   <div class="col-sm-4">
-                    <input type="text" class="form-control form-control-sm" name="cons_id_antrean" id="cons_id_antrean" value="<?= @$main['cons_id_antrean'] ?>" required>
+                    <input type="text" class="form-control form-control-sm" name="cons_id_antrean" id="cons_id_antrean" value="<?= @$main['cons_id_antrean'] ?>">
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="menu" class="col-sm-2 col-form-label text-right">Secret key Antrean <span class="text-danger">*</span></label>
+                  <label for="menu" class="col-sm-2 col-form-label text-right">Secret key Antrean</label>
                   <div class="col-sm-4">
-                    <input type="text" class="form-control form-control-sm" name="secret_key_antrean" id="secret_key_antrean" value="<?= @$main['secret_key_antrean'] ?>" required>
+                    <input type="text" class="form-control form-control-sm" name="secret_key_antrean" id="secret_key_antrean" value="<?= @$main['secret_key_antrean'] ?>">
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="menu" class="col-sm-2 col-form-label text-right">User Key Antrean <span class="text-danger">*</span></label>
+                  <label for="menu" class="col-sm-2 col-form-label text-right">User Key Antrean</label>
                   <div class="col-sm-4">
-                    <input type="text" class="form-control form-control-sm" name="user_key_antrean" id="user_key_antrean" value="<?= @$main['user_key_antrean'] ?>" required>
+                    <input type="text" class="form-control form-control-sm" name="user_key_antrean" id="user_key_antrean" value="<?= @$main['user_key_antrean'] ?>">
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="menu" class="col-sm-2 col-form-label text-right">Base URL Antrean <span class="text-danger">*</span></label>
+                  <label for="menu" class="col-sm-2 col-form-label text-right">Base URL Antrean</label>
                   <div class="col-sm-4">
-                    <input type="text" class="form-control form-control-sm" name="base_url_antrean" id="base_url_antrean" value="<?= @$main['base_url_antrean'] ?>" required>
+                    <input type="text" class="form-control form-control-sm" name="base_url_antrean" id="base_url_antrean" value="<?= @$main['base_url_antrean'] ?>">
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="menu" class="col-sm-2 col-form-label text-right">Service Name Antrean <span class="text-danger">*</span></label>
+                  <label for="menu" class="col-sm-2 col-form-label text-right">Service Name Antrean</label>
                   <div class="col-sm-4">
-                    <input type="text" class="form-control form-control-sm" name="service_name_antrean" id="service_name_antrean" value="<?= @$main['service_name_antrean'] ?>" required>
+                    <input type="text" class="form-control form-control-sm" name="service_name_antrean" id="service_name_antrean" value="<?= @$main['service_name_antrean'] ?>">
                   </div>
                 </div>
+                <hr>
+                <h4>Config ICare</h4>
+                <div class="form-group row">
+                  <label for="menu" class="col-sm-2 col-form-label text-right">Cons ID ICare</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control form-control-sm" name="cons_id_icare" id="cons_id_icare" value="<?= @$main['cons_id_icare'] ?>">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="menu" class="col-sm-2 col-form-label text-right">Secret key ICare</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control form-control-sm" name="secret_key_icare" id="secret_key_icare" value="<?= @$main['secret_key_icare'] ?>">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="menu" class="col-sm-2 col-form-label text-right">User Key ICare</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control form-control-sm" name="user_key_icare" id="user_key_icare" value="<?= @$main['user_key_icare'] ?>">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="menu" class="col-sm-2 col-form-label text-right">Base URL ICare</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control form-control-sm" name="base_url_icare" id="base_url_icare" value="<?= @$main['base_url_icare'] ?>">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="menu" class="col-sm-2 col-form-label text-right">Service Name ICare</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control form-control-sm" name="service_name_icare" id="service_name_icare" value="<?= @$main['service_name_icare'] ?>">
+                  </div>
+                </div>
+                <hr>
                 <h4>Config Apotek</h4>
                 <div class="form-group row">
                   <label for="menu" class="col-sm-2 col-form-label text-right">Kode PPK Apotek</label>

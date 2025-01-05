@@ -7,6 +7,9 @@ class M_service_bpjs extends CI_Model
   public function where($cookie)
   {
     $where = "WHERE 1=1 ";
+    if (@$cookie['search']['term'] != '') {
+      $where .= "AND (a.rs_name LIKE '%" . $this->db->escape_like_str($cookie['search']['term']) . "%' OR a.kode_ppk LIKE '%" . $this->db->escape_like_str($cookie['search']['term']) . "%' OR a.cons_id LIKE '%" . $this->db->escape_like_str($cookie['search']['term']) . "%' OR a.secret_key LIKE '%" . $this->db->escape_like_str($cookie['search']['term']) . "%' OR a.user_key LIKE '%" . $this->db->escape_like_str($cookie['search']['term']) . "%' OR a.service_name LIKE '%" . $this->db->escape_like_str($cookie['search']['term']) . "%' ) ";
+    }
     return $where;
   }
 

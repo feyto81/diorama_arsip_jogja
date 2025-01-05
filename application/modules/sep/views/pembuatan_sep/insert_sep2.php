@@ -51,7 +51,7 @@
                     <div class="form-group row">
                       <label for="menu" class="col-sm-4 col-form-label text-right">PPK Pelayanan <span class="text-danger">*</span></label>
                       <div class="col-sm-7">
-                        <input type="text" class="form-control form-control-sm" name="ppkPelayanan" value="1120R001" required>
+                        <input type="text" class="form-control form-control-sm" name="ppkPelayanan" value="<?= @$service['kode_ppk'] ?>" required>
                         <small class="text-purple">Kode Faskes Pemberi Pelayanan</small>
                       </div>
                     </div>
@@ -142,7 +142,7 @@
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="menu" class="col-sm-4 col-form-label text-right">No Rujukan <span class="text-danger">*</span></label>
+                      <label for="menu" class="col-sm-4 col-form-label text-right">No Rujukan</label>
                       <div class="col-sm-7">
                         <input type="text" class="form-control form-control-sm" name="noRujukan" value="112042161021P000003">
                       </div>

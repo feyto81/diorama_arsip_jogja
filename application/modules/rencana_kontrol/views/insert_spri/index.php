@@ -36,9 +36,9 @@
                   <div class="col-md-6">
                     <h5 class="mb-4 mt-n2">Form Input Parameter</h5>
                     <div class="form-group row">
-                      <label for="menu" class="col-sm-4 col-form-label text-right">No SEP <span class="text-danger">*</span></label>
+                      <label for="menu" class="col-sm-4 col-form-label text-right">No Kartu <span class="text-danger">*</span></label>
                       <div class="col-sm-7">
-                        <input type="text" class="form-control form-control-sm" name="noSEP" value="" required>
+                        <input type="text" class="form-control form-control-sm" name="noKartu" value="" required>
                       </div>
                     </div>
                     <div class="form-group row">
@@ -69,7 +69,7 @@
                   <div class="col-md-6">
                     <h5 class="mb-4 mt-n2">Contoh Data Input Parameter</h5>
                     <div class="form-group row mt-n2">
-                      <label for="menu" class="col-sm-12 col-form-label text-left">Nomor Surat Kontrol</label>
+                      <label for="menu" class="col-sm-12 col-form-label text-left">Nomor SPRI</label>
                       <ul class="col-sm-12 ml-4">
                         <li>-</li>
                       </ul>

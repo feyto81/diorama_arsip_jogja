@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class No_kartu_one_rs extends MY_Controller
+class Insert_spri extends MY_Controller
 {
 
   var $menu_id, $menu, $cookie;
@@ -15,7 +15,7 @@ class No_kartu_one_rs extends MY_Controller
       'service_bpjs/m_service_bpjs',
     ));
 
-    $this->menu_id = '06.01';
+    $this->menu_id = '09.04';
     $this->menu = $this->m_config->get_menu($this->menu_id);
     if ($this->menu == null) redirect(site_url() . '/error/error_403');
 
@@ -32,12 +32,12 @@ class No_kartu_one_rs extends MY_Controller
     authorize($this->menu, '_read');
     set_cookie_menu($this->menu_id, $this->cookie);
     $data['menu'] = $this->menu;
-    $this->render('cari_rujukan/no_kartu_one/rs', $data);
+    $this->render('insert_spri/index', $data);
   }
 
   function process()
   {
-    $keyword = $this->input->post('keyword', true);
+    $data = $this->input->post();
     //
     $service_bpjs = $this->m_service_bpjs->get_first();
     $vclaim_conf = [
@@ -48,8 +48,19 @@ class No_kartu_one_rs extends MY_Controller
       'user_key' => $service_bpjs['user_key'],
     ];
 
-    $peserta = new Nsulistiyawan\Bpjs\VClaim\Rujukan($vclaim_conf);
-    $result = $peserta->cariByNoKartu('RS', $keyword);
+    $request = array(
+      'request' =>
+      array(
+        'noKartu' => @$data['noKartu'],
+        'kodeDokter' => @$data['kodeDokter'],
+        'poliKontrol' => @$data['poliKontrol'],
+        'tglRencanaKontrol' => @$data['tglRencanaKontrol'],
+        'user' => @$data['user'],
+      ),
+    );
+
+    $peserta = new Nsulistiyawan\Bpjs\VClaim\RencanaKontrol($vclaim_conf);
+    $result = $peserta->insertRencanaInap($request);
 
     echo json_encode($result, JSON_PRETTY_PRINT);
   }

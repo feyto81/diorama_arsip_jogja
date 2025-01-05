@@ -33,6 +33,15 @@
                   <div class="col-md-6">
                     <h5 class="mb-4 mt-n2">Form Input Parameter</h5>
                     <div class="form-group row">
+                      <label for="menu" class="col-sm-4 col-form-label text-right">Jenis Pelayanan <span class="text-danger">*</span></label>
+                      <div class="col-sm-7">
+                        <select class="form-control form-control-sm select2-hidden" name="jns_pelayanan" required>
+                          <option value="1">Rawat Inap</option>
+                          <option value="2">Rawat Jalan</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group row">
                       <label for="menu" class="col-sm-4 col-form-label text-right">Tgl. Mulai <span class="text-danger">*</span></label>
                       <div class="col-sm-4">
                         <input type="text" class="form-control form-control-sm datepicker" name="tgl_mulai" value="" required>

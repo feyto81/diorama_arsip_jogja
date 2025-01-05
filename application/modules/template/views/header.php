@@ -79,9 +79,9 @@
     $(document).ready(function() {
 
       //lockscreen
-      setTimeout(function() {
-        window.location.replace("<?= site_url() . '/auth/locked/lock' ?>");
-      }, 1000 * 60 * 60);
+      // setTimeout(function() {
+      //   window.location.replace("<?php // = site_url() . '/auth/locked/lock' ?>");
+      // }, 1000 * 60 * 60);
 
       //sweetalert
       // success message

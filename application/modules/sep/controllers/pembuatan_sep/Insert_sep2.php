@@ -32,6 +32,7 @@ class Insert_sep2 extends MY_Controller
     authorize($this->menu, '_read');
     set_cookie_menu($this->menu_id, $this->cookie);
     $data['menu'] = $this->menu;
+    $data['service'] = $this->m_service_bpjs->get_first();
     $this->render('pembuatan_sep/insert_sep2', $data);
   }
 
