@@ -14,9 +14,8 @@ class Home extends MX_Controller
   function index()
   {
     $data['identitas'] = @$this->m_app->identitas_get();
-    // $this->load->view('app/layouts/header', $data);
-    // $this->load->view('app/layouts/navbar', $data);
     $this->load->view('app/layouts/header', $data);
-    // $this->load->view('app/layouts/footer');
+    $this->load->view('app/layouts/home', $data);
+    $this->load->view('app/layouts/footer', $data);
   }
 }
