@@ -1,9 +1,5 @@
 <footer class="footer-main container-fluid no-padding">
-  <div class="container-fluid no-padding visit-block">
-    <div class="container">
-      <h5>Planning to visit our museum? Look at the timetable for the upcoming exhibitions</h5>
-    </div>
-  </div>
+ 
   <div class="container-fluid no-padding footer-section">
     <div class="container">
       <div class="row">

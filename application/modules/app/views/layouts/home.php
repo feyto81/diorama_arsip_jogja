@@ -217,16 +217,6 @@
       </div>
     </div>
   </div>
-  <div class="purchase-section container-fluid no-padding">
-    <div class="container">
-      <div class="purchase-content">
-        <h5>here comes the best museum theme ever!</h5>
-        <p>These days are all Happy and Free. These days are all share them with me oh baby. Knight Rider: A shadowy flight into the dangerous world of a man who does not exist.</p>
-        <a href="#" title="Purchase Theme" class="purchase">Purchase Theme</a>
-        <a href="#" title="View Demos" class="purchase view">View Demos</a>
-      </div>
-    </div>
-  </div>
   <div class="container-fluid no-padding venu-section">
     <div class="container">
       <div class="section-header">
@@ -316,63 +306,11 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid no-padding testimonial-section">
-    <div class="container">
-      <div class="section-header">
-        <h3><b>testimonials</b><span>Our <span>visiters</span> Says</span></h3>
-      </div>
-      <div class="testimonial-carousel">
-        <div class="col-md-12 col-sm-12 col-xs-12 no-padding testi-block">
-          <div class="col-md-6 col-sm-6 col-xs-6 no-padding testi-img-block">
-            <img src="<?= base_url() ?>dist/frontend/images/testi1.jpg" alt="Testimonial" />
-            <i class="fa fa-quote-right"></i>
-          </div>
-          <div class="col-md-6 col-sm-6 col-xs-6 testi-content">
-            <p>That's just a little bit more than the law will allow. You wanna be where you can see our troubles are all the same. </p>
-            <h4>Loucine walker</h4>
-            <span>Architect</span>
-          </div>
-        </div>
-        <div class="col-md-12 col-sm-12 col-xs-12 no-padding testi-block">
-          <div class="col-md-6 col-sm-6 col-xs-6 no-padding testi-img-block">
-            <img src="<?= base_url() ?>dist/frontend/images/testi2.jpg" alt="Testimonial" />
-            <i class="fa fa-quote-right"></i>
-          </div>
-          <div class="col-md-6 col-sm-6 col-xs-6 testi-content">
-            <p>That's just a little bit more than the law will allow. You wanna be where you can see our troubles are all the same. </p>
-            <h4>Prince jewels</h4>
-            <span>Architect</span>
-          </div>
-        </div>
-        <div class="col-md-12 col-sm-12 col-xs-12 no-padding testi-block">
-          <div class="col-md-6 col-sm-6 col-xs-6 no-padding testi-img-block">
-            <img src="<?= base_url() ?>dist/frontend/images/testi1.jpg" alt="Testimonial" />
-            <i class="fa fa-quote-right"></i>
-          </div>
-          <div class="col-md-6 col-sm-6 col-xs-6 testi-content">
-            <p>That's just a little bit more than the law will allow. You wanna be where you can see our troubles are all the same. </p>
-            <h4>Loucine walker</h4>
-            <span>Architect</span>
-          </div>
-        </div>
-        <div class="col-md-12 col-sm-12 col-xs-12 no-padding testi-block">
-          <div class="col-md-6 col-sm-6 col-xs-6 no-padding testi-img-block">
-            <img src="<?= base_url() ?>dist/frontend/images/testi2.jpg" alt="Testimonial" />
-            <i class="fa fa-quote-right"></i>
-          </div>
-          <div class="col-md-6 col-sm-6 col-xs-6 testi-content">
-            <p>That's just a little bit more than the law will allow. You wanna be where you can see our troubles are all the same. </p>
-            <h4>Prince jewels</h4>
-            <span>Architect</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
   <div class="container-fluid no-padding event-section">
     <div class="container">
       <div class="section-header">
-        <h3><b>Events</b><span>Up coming <span>exhibitions</span></span></h3>
+        <h3><b>Kegiatan</b><span>yang akan datang </span></h3>
       </div>
       <div class="row">
         <div class="col-md-11 col-sm-6 col-xs-6">
@@ -422,27 +360,11 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid clients-section">
-    <div class="container">
-      <div class="clients-carousel">
-        <div class="col-md-12 item"><a href="#" title="client"><img src="<?= base_url() ?>dist/frontend/images/client-1.png" alt="clients-1" /></a></div>
-        <div class="col-md-12 item"><a href="#" title="client"><img src="<?= base_url() ?>dist/frontend/images/client-2.png" alt="clients-2" /></a></div>
-        <div class="col-md-12 item"><a href="#" title="client"><img src="<?= base_url() ?>dist/frontend/images/client-3.png" alt="clients-3" /></a></div>
-        <div class="col-md-12 item"><a href="#" title="client"><img src="<?= base_url() ?>dist/frontend/images/client-4.png" alt="clients-4" /></a></div>
-        <div class="col-md-12 item"><a href="#" title="client"><img src="<?= base_url() ?>dist/frontend/images/client-5.png" alt="clients-5" /></a></div>
-
-        <div class="col-md-12 item"><a href="#" title="client"><img src="<?= base_url() ?>dist/frontend/images/client-1.png" alt="clients-1" /></a></div>
-        <div class="col-md-12 item"><a href="#" title="client"><img src="<?= base_url() ?>dist/frontend/images/client-2.png" alt="clients-2" /></a></div>
-        <div class="col-md-12 item"><a href="#" title="client"><img src="<?= base_url() ?>dist/frontend/images/client-3.png" alt="clients-3" /></a></div>
-        <div class="col-md-12 item"><a href="#" title="client"><img src="<?= base_url() ?>dist/frontend/images/client-4.png" alt="clients-4" /></a></div>
-        <div class="col-md-12 item"><a href="#" title="client"><img src="<?= base_url() ?>dist/frontend/images/client-5.png" alt="clients-5" /></a></div>
-      </div>
-    </div>
-  </div>
+ 
   <div class="container-fluid no-padding latest-blog-section">
     <div class="container">
       <div class="section-header">
-        <h3><b>NEWS</b><span>Our Latest <span>NEWS</span></span></h3>
+        <h3><b>Berita</b><span>Terakhir <span>BERITA</span></span></h3>
       </div>
       <div class="row">
         <div class="col-md-4 col-sm-6 col-xs-6 latest-blog">
@@ -531,7 +453,7 @@
   </div>
   <div class="container-fluid no-padding gallery-section">
     <div class="section-header">
-      <h3><b>GALLERY</b><span>Our Great <span>FLOWS</span></span></h3>
+      <h3><b>GALERI</b><span></span></h3>
     </div>
     <div class="gallery-category">
       <ul id="filters">

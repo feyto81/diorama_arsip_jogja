@@ -45,7 +45,7 @@
                 <p><span>Jadwal Museum</span> <?= @$identitas['jadwal_keterangan'] ?></p>
               </div>
               <div class="col-md-5 col-sm-5 social-block">
-                <p>Also see in:</p>
+                <p>Juga bisa melihat di:</p>
                 <ul>
                   <li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
                   <li><a href="#" title="Facebook"><i class="fa fa-twitter"></i></a></li>
