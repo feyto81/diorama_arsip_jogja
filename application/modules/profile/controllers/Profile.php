@@ -47,7 +47,7 @@ class Profile extends MY_Controller
     }
     unset($data['old_logo']);
     $this->m_profile->save($data, $id);
-    create_log(3, $this->menu['menu_name']);
+    create_log('ea565e8b-ef41-4ff6-a254-e9a682e278bc', $this->menu['menu_name']);
     $this->session->set_flashdata('flash_success', 'Data berhasil diubah.');
     redirect(site_url() . '/' . $this->menu['controller'] . '/' . $this->menu['url'] . '/' . $this->cookie['cur_page']);
   }

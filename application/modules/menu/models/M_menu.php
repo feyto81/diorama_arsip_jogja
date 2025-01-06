@@ -6,9 +6,9 @@ class M_menu extends CI_Model
 
   public function where($cookie)
   {
-    $where = "WHERE a.is_deleted = 0 ";
+    $where = "WHERE a.deleted_st = 0 ";
     if (@$cookie['search']['term'] != '') {
-      $where .= "AND a.menu_name LIKE '%" . $this->db->escape_like_str($cookie['search']['term']) . "%' ";
+      $where .= "AND (a.menu_name LIKE '%" . $this->db->escape_like_str($cookie['search']['term']) . "%' OR a.menu_id LIKE '%" . $this->db->escape_like_str($cookie['search']['term']) . "%') ";
     }
     return $where;
   }
@@ -20,14 +20,15 @@ class M_menu extends CI_Model
       $where
       ORDER BY "
       . $cookie['order']['field'] . " " . $cookie['order']['type'] .
-      " LIMIT " . $cookie['cur_page'] . "," . $cookie['per_page'];
+      " LIMIT " . $cookie['per_page'] . 
+      " OFFSET " . $cookie['cur_page'];
     $query = $this->db->query($sql);
     return $query->result_array();
   }
 
   public function all_data()
   {
-    $where = "WHERE a.is_deleted = 0 ";
+    $where = "WHERE a.deleted_st = 0 ";
 
     $sql = "SELECT * FROM menu a $where ORDER BY created_at";
     $query = $this->db->query($sql);
@@ -76,7 +77,7 @@ class M_menu extends CI_Model
     if ($permanent) {
       $this->db->where('menu_id', $id)->delete('menu');
     } else {
-      $data['is_deleted'] = 1;
+      $data['deleted_st'] = 1;
       $data['updated_at'] = date('Y-m-d H:i:s');
       $data['updated_by'] = $this->session->userdata('user_fullname');
       $this->db->where('menu_id', $id)->update('menu', $data);

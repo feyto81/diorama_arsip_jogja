@@ -31,7 +31,7 @@
                 <div class="flash-error" data-flasherror="<?= $this->session->flashdata('flash_error') ?>"></div>
                 <input type="hidden" class="form-control form-control-sm" name="user_id" id="user_id" value="<?= @$main['user_id'] ?>" required>
                 <?php if ($id != null) : ?>
-                  <input type="hidden" class="form-control form-control-sm" name="old" id="old" value="<?= @$main['user_name'] ?>" required>
+                  <input type="hidden" class="form-control form-control-sm" name="old" id="old" value="<?= @$main['user_id'] ?>" required>
                 <?php endif; ?>
                 <div class="form-group row">
                   <label for="role_id" class="col-sm-2 col-form-label text-right">Role</label>
@@ -93,7 +93,7 @@
                   <label for="url" class="col-sm-2 col-form-label text-right">Aktif</label>
                   <div class="col-sm-3">
                     <div class="pretty p-icon">
-                      <input class="icheckbox" type="checkbox" name="is_active" id="is_active" value="1" <?= (@$main['is_active'] == 1) ? 'checked' : '' ?>>
+                      <input class="icheckbox" type="checkbox" name="active_st" id="active_st" value="1" <?= (@$main['active_st'] == 1) ? 'checked' : '' ?>>
                       <div class="state">
                         <i class="icon fas fa-check"></i><label></label>
                       </div>

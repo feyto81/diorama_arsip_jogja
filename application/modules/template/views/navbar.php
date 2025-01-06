@@ -14,15 +14,6 @@
         <i><?= $profile['app_name'] ?> V <?= $profile['version'] ?></i>
       </a>
     </li>
-    <li class="nav-item">
-      <form id="form-active-servicebpjs" action="<?= site_url() . '/app/save_active_service_bpjs' ?>" method="post" autocomplete="off" onchange="$('#form-active-servicebpjs').submit()">
-        <select class="form-control form-control-sm select2-hidden" name="active_st" id="active_st">
-          <?php foreach ($service_bpjs as $row) : ?>
-            <option value="<?= $row['service_bpjs_id'] ?>" <?= ($row['active_st'] == 1) ? 'selected' : '' ?>><?= $row['rs_name'] ?></option>
-          <?php endforeach; ?>
-        </select>
-      </form>
-    </li>
   </ul>
 
   <!-- Right navbar links -->

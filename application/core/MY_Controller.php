@@ -11,7 +11,6 @@ class MY_Controller extends MX_Controller
     $this->load->model(array(
       'profile/m_profile',
       'config/m_config',
-      'service_bpjs/m_service_bpjs',
     ));
   }
 
@@ -42,7 +41,6 @@ class MY_Controller extends MX_Controller
 
     $data['sidenav'] = $this->m_config->get_role_menu();
     $data['profile'] = $this->m_profile->get_first();
-    $data['service_bpjs'] = $this->m_service_bpjs->all_data();
 
     // Templating
     $data['header'] = $this->load->view('template/header', $data, TRUE);

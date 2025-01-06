@@ -78,7 +78,7 @@ if (!function_exists('pagination_info')) {
 }
 
 if (!function_exists('create_log')) {
-  function create_log($access = 1, $module = "")
+  function create_log($access = '8dccd8fc-fb8b-4829-ae6f-867507e73560', $module = "")
   {
     $CI = get_instance();
 

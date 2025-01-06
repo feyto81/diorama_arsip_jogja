@@ -49,10 +49,10 @@ class Role extends MY_Controller
   {
     ($id == null) ? authorize($this->menu, '_create') : authorize($this->menu, '_update');
     if ($id == null) {
-      create_log(2, $this->menu['menu_name']);
+      create_log('fb49e2c1-a762-4a34-8e2c-c8fab48814f4', $this->menu['menu_name']);
       $data['main'] = null;
     } else {
-      create_log(3, $this->menu['menu_name']);
+      create_log('ea565e8b-ef41-4ff6-a254-e9a682e278bc', $this->menu['menu_name']);
       $data['main'] = $this->m_role->by_field('role_id', $id);
     }
     $data['id'] = $id;
@@ -64,8 +64,8 @@ class Role extends MY_Controller
   {
     ($id == null) ? authorize($this->menu, '_create') : authorize($this->menu, '_update');
     html_escape($data = $this->input->post(null, true));
-    if (!isset($data['is_active'])) {
-      $data['is_active'] = 0;
+    if (!isset($data['active_st'])) {
+      $data['active_st'] = 0;
     }
     $cek = $this->m_role->by_field('role_name', $data['role_name']);
     if ($id == null) {
@@ -75,7 +75,7 @@ class Role extends MY_Controller
       }
       $data['role_id'] = $this->uuid->v4();
       $this->m_role->save($data, $id);
-      create_log(2, $this->menu['menu_name']);
+      create_log('fb49e2c1-a762-4a34-8e2c-c8fab48814f4', $this->menu['menu_name']);
       $this->session->set_flashdata('flash_success', 'Data berhasil ditambahkan.');
     } else {
       if ($data['old'] != $data['role_name'] && $cek != null) {
@@ -84,7 +84,7 @@ class Role extends MY_Controller
       }
       unset($data['old']);
       $this->m_role->save($data, $id);
-      create_log(3, $this->menu['menu_name']);
+      create_log('ea565e8b-ef41-4ff6-a254-e9a682e278bc', $this->menu['menu_name']);
       $this->session->set_flashdata('flash_success', 'Data berhasil diubah.');
     }
     redirect(site_url() . '/' . $this->menu['controller'] . '/' . $this->menu['url'] . '/' . $this->cookie['cur_page']);
@@ -94,7 +94,7 @@ class Role extends MY_Controller
   {
     ($id == null) ? authorize($this->menu, '_create') : authorize($this->menu, '_update');
     $this->m_role->delete($id);
-    create_log(4, $this->menu['menu_name']);
+    create_log('d6d0ec35-3952-4f22-a7dd-609aea350a41', $this->menu['menu_name']);
     $this->session->set_flashdata('flash_success', 'Data berhasil dihapus.');
     redirect(site_url() . '/' . $this->menu['controller'] . '/' . $this->menu['url'] . '/' . $this->cookie['cur_page']);
   }
@@ -103,11 +103,11 @@ class Role extends MY_Controller
   {
     authorize($this->menu, '_update');
     if ($type == 'enable') {
-      $this->m_role->update($id, array('is_active' => 1));
+      $this->m_role->update($id, array('active_st' => 1));
     } else {
-      $this->m_role->update($id, array('is_active' => 0));
+      $this->m_role->update($id, array('active_st' => 0));
     }
-    create_log(3, $this->this->menu['menu_name']);
+    create_log('ea565e8b-ef41-4ff6-a254-e9a682e278bc', $this->this->menu['menu_name']);
     redirect(site_url() . '/' . $this->menu['controller'] . '/' . $this->menu['url'] . '/' . $this->cookie['cur_page']);
   }
 
@@ -126,14 +126,14 @@ class Role extends MY_Controller
 
           case 'enable':
             authorize($this->menu, '_update');
-            $this->m_role->update($key, array('is_active' => 1));
+            $this->m_role->update($key, array('active_st' => 1));
             $flash = 'Data berhasil diaktifkan.';
             $t = 3;
             break;
 
           case 'disable':
             authorize($this->menu, '_update');
-            $this->m_role->update($key, array('is_active' => 0));
+            $this->m_role->update($key, array('active_st' => 0));
             $flash = 'Data berhasil dinonaktifkan.';
             $t = 3;
             break;
@@ -149,10 +149,10 @@ class Role extends MY_Controller
   {
     ($id == null) ? authorize($this->menu, '_create') : authorize($this->menu, '_update');
     if ($id == null) {
-      create_log(2, $this->menu['menu_name']);
+      create_log('fb49e2c1-a762-4a34-8e2c-c8fab48814f4', $this->menu['menu_name']);
       $data['main'] = null;
     } else {
-      create_log(3, $this->menu['menu_name']);
+      create_log('ea565e8b-ef41-4ff6-a254-e9a682e278bc', $this->menu['menu_name']);
       $data['main'] = $this->m_role->by_field('role_id', $id);
     }
     $data['id'] = $id;

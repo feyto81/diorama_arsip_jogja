@@ -84,7 +84,7 @@
                           <th class="text-center" width="70">Aksi</th>
                           <th class="text-center" width="200"><?= table_sort($menu['menu_id'], 'Nama', 'role_name', $cookie['order']) ?></th>
                           <th class="text-center">Deskripsi</th>
-                          <th class="text-center" width="70"><?= table_sort($menu['menu_id'], 'Status', 'is_active', $cookie['order']) ?></th>
+                          <th class="text-center" width="70"><?= table_sort($menu['menu_id'], 'Status', 'active_st', $cookie['order']) ?></th>
                         </tr>
                       </thead>
                       <?php if (@$main == null) : ?>
@@ -123,7 +123,7 @@
                                 <td><?= $r['description'] ?></td>
                                 <td class="text-center td-status">
                                   <?php if ($menu['_update'] == 1) : ?>
-                                    <?php if ($r['is_active'] == 1) : ?>
+                                    <?php if ($r['active_st'] == 1) : ?>
                                       <a href="<?= site_url() . '/' . $menu['controller'] . '/status/disable/' . $r['role_id'] ?>">
                                         <i class="icon-status fas fa-toggle-on text-success"></i>
                                       </a>
@@ -133,7 +133,7 @@
                                       </a>
                                     <?php endif; ?>
                                   <?php else : ?>
-                                    <?php if ($r['is_active'] == 1) : ?>
+                                    <?php if ($r['active_st'] == 1) : ?>
                                       <i class="icon-status fas fa-toggle-on text-success"></i>
                                     <?php else : ?>
                                       <i class="icon-status fas fa-toggle-off text-gray"></i>

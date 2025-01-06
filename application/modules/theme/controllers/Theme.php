@@ -40,7 +40,7 @@ class Theme extends MY_Controller
   {
     html_escape($data = $this->input->post(null, true));
     $this->m_profile->save(array(urldecode($type) => urldecode($val)));
-    create_log(3, $this->menu['menu_name']);
+    create_log('ea565e8b-ef41-4ff6-a254-e9a682e278bc', $this->menu['menu_name']);
     $this->session->set_flashdata('flash_success', 'Data berhasil diubah.');
     redirect(site_url() . '/' . $this->menu['controller'] . '/' . $this->menu['url'] . '/' . $this->cookie['cur_page']);
   }

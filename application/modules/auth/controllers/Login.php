@@ -44,7 +44,7 @@ class Login extends MX_Controller
 	{
 		$data['profile'] = $this->m_profile->get_first();
 
-		create_log(1, 'Login');
+		create_log('8dccd8fc-fb8b-4829-ae6f-867507e73560', 'Login');
 		$this->load->view('login', $data);
 	}
 

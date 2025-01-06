@@ -15,7 +15,7 @@ class M_config extends CI_Model
       "SELECT * FROM role_menu a
       JOIN menu b ON a.menu_id = b.menu_id
       WHERE a.role_id = '$role_id' 
-        AND b.type = 3 AND b.is_active = 1
+        AND b.type = 3 AND b.active_st = 1
       ORDER BY a.menu_id ASC"
     );
 
@@ -27,7 +27,7 @@ class M_config extends CI_Model
     $role_id = $this->session->userdata('role_id');
 
     $sql_where = '';
-    $sql_where .= ($parent_id != '') ? "b.parent_id = '$parent_id'" : 'b.parent_id = ""';
+    $sql_where .= ($parent_id != '') ? "b.parent_id = '$parent_id'" : "b.parent_id = ''";
 
     $query = $this->db->query(
       "SELECT * 
@@ -36,7 +36,7 @@ class M_config extends CI_Model
       JOIN menu b ON a.menu_id = b.menu_id
       WHERE
         a.role_id = '$role_id' AND 
-        $sql_where AND b.is_active = 1
+        $sql_where AND b.active_st = 1
       ORDER BY a.menu_id"
     );
     if ($query->num_rows() > 0) {
