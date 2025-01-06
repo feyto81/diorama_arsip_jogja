@@ -2,7 +2,7 @@
 <aside class="main-sidebar <?=$profile['sidebar_variant'].$profile['sidebar_accent']?> elevation-4 <?php if($profile['sidebarnav_small_text'] == 1 ){echo 'text-sm';}?>">
   <!-- Brand Logo -->
   <a href="index3.html" class="brand-link <?=$profile['brand_logo_variant']?>">
-    <img src="<?=base_url()?>images/logos/<?=$profile['logo']?>" alt="<?=$profile['app_name']?>" class="brand-image img-circle elevation-3"
+    <img src="<?=base_url()?>images/logos/<?=$profile['logo']?>" alt="<?=$profile['app_name']?>" class="brand-image"
         style="opacity: .8">
     <span class="brand-text font-weight-light"><?=$profile['short_name']?></span>
   </a>
