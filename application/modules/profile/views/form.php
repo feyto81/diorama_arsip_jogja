@@ -92,6 +92,12 @@
                     <input type="text" class="form-control form-control-sm" name="email" id="email" value="<?= @$main['email'] ?>" required>
                   </div>
                 </div>
+                <div class="form-group row">
+                  <label for="menu" class="col-sm-2 col-form-label text-right">Jadwal Keterangan</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control form-control-sm" name="jadwal_keterangan" id="jadwal_keterangan" value="<?= @$main['jadwal_keterangan'] ?>">
+                  </div>
+                </div>
                 <h5>Logo</h5>
                 <div class="form-group row">
                   <label for="url" class="col-sm-2 col-form-label text-right">Logo <span class="text-danger">*</span></label>
