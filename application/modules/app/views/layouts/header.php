@@ -99,7 +99,7 @@
             <!-- Menu Icon -->
             <div class="navbar-collapse collapse" id="navbar">
               <ul class="nav navbar-nav">
-                <li><a href="javascript:void(0)" title="Home">Home</a></li>
+                <li><a href="<?= site_url('app/home') ?>" title="Home">Home</a></li>
                 <li><a href="javascript:void(0)" title="Tentang Kami">Tentang Kami</a></li>
                 <li><a href="javascript:void(0)" title="Kegiatan">Kegiatan</a></li>
                 <li><a href="javascript:void(0)" title="Galeri">Galeri</a></li>
@@ -111,5 +111,3 @@
         </div>
       </div>
     </header>
-   
-    

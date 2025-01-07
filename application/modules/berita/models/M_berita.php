@@ -83,4 +83,14 @@ class M_berita extends CI_Model
       $this->db->where('berita_id', $id)->update('dat_berita', $data);
     }
   }
+
+  public function berita_list()
+  {
+    return $this->db->query("SELECT * FROM dat_berita")->result_array();
+  }
+
+  public function berita_detail($id)
+  {
+    return $this->db->query("SELECT * FROM dat_berita WHERE berita_id = '" . @$id . "'")->row_array();
+  }
 }

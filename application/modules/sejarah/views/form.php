@@ -40,7 +40,7 @@
                 <div class="form-group row">
                   <label for="menu" class="col-sm-2 col-form-label text-right">Konten <span class="text-danger">*</span></label>
                   <div class="col-sm-10">
-                    <textarea class="form-control" name="content" id="content" rows="10" cols="20"><?= @$main['content'] ?></textarea>
+                    <textarea id="compose-textarea" class="form-control" name="content" style="height: 600px"><?= @$main['content'] ?></textarea>
                   </div>
                 </div>
                 <div class="form-group row">

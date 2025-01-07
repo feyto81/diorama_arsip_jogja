@@ -193,27 +193,14 @@
     <div class="section-header">
       <h3>Sejarah<span> Selamat Datang di <span><?= @$identitas['company_name'] ?></span></span></h3>
     </div>
-    <div class="col-md-6 no-padding img-block" data-image="<?= base_url() ?>dist/frontend/images/history-img.jpg">
-      <img src="<?= base_url() ?>dist/frontend/images/history-img.jpg" alt="History" />
+    <div class="col-md-6 no-padding img-block" data-image="<?= base_url() ?>images/sejarah/<?= @$sejarah['image_thumbnail'] ?>">
+      <img src="<?= base_url() ?>images/sejarah/<?= @$sejarah['image_thumbnail'] ?>" alt="History" />
     </div>
     <div class="col-md-6 history-details">
       <div class="col-md-7 history-box">
-        <h3>The Great Museum <br> Estimated by <span>Romans in 1961</span></h3>
-        <p>Give us any chance well take it Give us any rule we'll break it. We're gonna make our dreams come true. They were four men living all together.</p>
-        <ul>
-          <li>
-            <h4>March 1961</h4>
-            <p>The establishment of our museum, with two professional tourist agents, in small office in Boston.</p>
-          </li>
-          <li>
-            <h4>June 1998</h4>
-            <p>Last of Americas deep space probes. If you have a problem if no one else can help and if you</p>
-          </li>
-          <li>
-            <h4>May 2004</h4>
-            <p>They were four men living all together yet they were all alone.</p>
-          </li>
-        </ul>
+        <h3><?= @$sejarah['title'] ?></h3>
+        <p><?= @$sejarah['content'] ?></p>
+
       </div>
     </div>
   </div>
@@ -360,94 +347,36 @@
       </div>
     </div>
   </div>
- 
+
   <div class="container-fluid no-padding latest-blog-section">
     <div class="container">
       <div class="section-header">
         <h3><b>Berita</b><span>Terakhir <span>BERITA</span></span></h3>
       </div>
       <div class="row">
-        <div class="col-md-4 col-sm-6 col-xs-6 latest-blog">
-          <article class="type-post">
-            <div class="entry-cover">
-              <a href="#"><img src="<?= base_url() ?>dist/frontend/images/latest-blog1.jpg" alt="Blog" /></a>
-            </div>
-            <div class="entry-header">
-              <div class="title-block">
-                <h3><a href="#" title="Enjoying the Classical Art">Enjoying the <span>Classical Art</span></a></h3>
-                <div class="author">
-                  <span>by <a href="#" title="admin">admin</a></span>
-                  <div class="category">
-                    <a href="#" title="featured">featured</a>
+        <?php foreach (@$berita as $row) : ?>
+          <div class="col-md-4 col-sm-6 col-xs-6 latest-blog">
+            <article class="type-post">
+              <div class="entry-cover">
+                <a href="<?= site_url('app/berita/detail/' . @$row['berita_id']) ?>"><img src="<?= base_url() ?>images/berita/<?= @$row['berita_image'] ?>" alt="Blog" /></a>
+              </div>
+              <div class="entry-header">
+                <div class="title-block">
+                  <h3><a href="#" title="Enjoying the Classical Art"><?= @$row['berita_title'] ?></a></h3>
+                  <div class="author">
+                    <span>Penulis by <a href="" title="<?= @$row['berita_author'] ?>"><?= @$row['berita_author'] ?></a></span>
                   </div>
                 </div>
+                <span class="post-date"><a href="<?= site_url('app/berita/detail/' . @$row['berita_id']) ?>"><?= to_date(@$row['berita_date'], '', 'only_day') ?> <span><?= to_date(@$row['berita_date'], '', 'only_month_short_name') ?></span></a></span>
               </div>
-              <span class="post-date"><a href="#">15 <span>Sep</span></a></span>
-            </div>
-            <div class="entry-content">
-              <p>He busy revin' up his Powerful Mach 5. Said Californ is the place you ought to be So they loaded up the truck and moved to Beverly. </p>
-              <a href="#" class="btn" title="View More">View more <i class="fa fa-angle-right"></i></a>
-              <div class="entry-meta">
-                <span class="entry-comments"><i class="fa fa-comment-o"></i><a href="#">3 Comments</a></span>
-                <span class="entry-likes"><i class="fa fa-heart-o"></i><a href="#">15 Likes</a></span>
+              <div class="entry-content">
+                <p><?= substr($row['berita_desc'], 0, 50) ?></p>
+                <a href="<?= site_url('app/berita/detail/' . @$row['berita_id']) ?>" class="btn" title="Lihat lebih lanjut">Lihat lebih lanjut <i class="fa fa-angle-right"></i></a>
+
               </div>
-            </div>
-          </article>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-6 latest-blog">
-          <article class="type-post">
-            <div class="entry-cover">
-              <a href="#"><img src="<?= base_url() ?>dist/frontend/images/latest-blog2.jpg" alt="Blog" /></a>
-            </div>
-            <div class="entry-header">
-              <div class="title-block">
-                <h3><a href="#" title="Imagination of the Paintings">Imagination of the <span>Paintings</span></a></h3>
-                <div class="author">
-                  <span>by <a href="#" title="admin">admin</a></span>
-                  <div class="category">
-                    <a href="#" title="featured">featured</a>
-                  </div>
-                </div>
-              </div>
-              <span class="post-date"><a href="#">18 <span>Jun</span></a></span>
-            </div>
-            <div class="entry-content">
-              <p>He busy revin' up his Powerful Mach 5. Said Californ is the place you ought to be So they loaded up the truck and moved to Beverly. </p>
-              <a href="#" class="btn" title="View More">View more <i class="fa fa-angle-right"></i></a>
-              <div class="entry-meta">
-                <span class="entry-comments"><i class="fa fa-comment-o"></i><a href="#">6 Comments</a></span>
-                <span class="entry-likes"><i class="fa fa-heart-o"></i><a href="#">55 Likes</a></span>
-              </div>
-            </div>
-          </article>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-6 latest-blog">
-          <article class="type-post">
-            <div class="entry-cover">
-              <a href="#"><img src="<?= base_url() ?>dist/frontend/images/latest-blog3.jpg" alt="Blog" /></a>
-            </div>
-            <div class="entry-header">
-              <div class="title-block">
-                <h3><a href="#" title="Roman fort gate tours">Roman fort gate <span>tours</span></a></h3>
-                <div class="author">
-                  <span>by <a href="#" title="admin">admin</a></span>
-                  <div class="category">
-                    <a href="#" title="featured">featured</a>
-                  </div>
-                </div>
-              </div>
-              <span class="post-date"><a href="#">25 <span>Aug</span></a></span>
-            </div>
-            <div class="entry-content">
-              <p>He busy revin' up his Powerful Mach 5. Said Californ is the place you ought to be So they loaded up the truck and moved to Beverly. </p>
-              <a href="#" class="btn" title="View More">View more <i class="fa fa-angle-right"></i></a>
-              <div class="entry-meta">
-                <span class="entry-comments"><i class="fa fa-comment-o"></i><a href="#">5 Comments</a></span>
-                <span class="entry-likes"><i class="fa fa-heart-o"></i><a href="#">17 Likes</a></span>
-              </div>
-            </div>
-          </article>
-        </div>
+            </article>
+          </div>
+        <?php endforeach; ?>
       </div>
     </div>
   </div>
