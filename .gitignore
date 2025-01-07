@@ -9,6 +9,12 @@ images/users/*.*
 # Logo
 images/logos/*.*
 !images/logos/logo.png
+# Berita
+images/berita/*.*
+!images/berita/index.html
+# Galeri
+images/galeri/*.*
+!images/galeri/index.html
 # System File
 .DS_Store
 # Temporary Log
