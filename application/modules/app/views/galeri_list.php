@@ -21,9 +21,10 @@
   <div class="container-fluid no-padding gallery-page">
 
 
-    <?php foreach (@$main as $row) : ?>
 
-      <div class="gallery-list gallery-fitrow">
+    <div class="gallery-list gallery-fitrow">
+      <?php foreach (@$main as $row) : ?>
+
         <div class="gallery-box col-md-4 col-sm-4 col-xs-6 no-padding modern others">
           <img src="<?= base_url() ?>images/galeri/<?= @$row['galeri_image'] ?>" alt="Galeri" />
           <div class="gallery-content">
@@ -34,9 +35,9 @@
             </span>
           </div>
         </div>
+      <?php endforeach; ?>
 
-      </div>
-    <?php endforeach; ?>
+    </div>
 
   </div><!-- Gallery /- -->
 
