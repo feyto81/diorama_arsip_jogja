@@ -204,100 +204,11 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid no-padding venu-section">
-    <div class="container">
-      <div class="section-header">
-        <h3>On View<span>About Our <span>VENUS</span></span></h3>
-      </div>
-      <div class="row">
-        <div class="col-md-2 col-sm-6 col-xs-6 venu-box">
-          <div class="venu-image-block">
-            <img src="<?= base_url() ?>dist/frontend/images/venu-1.jpg" alt="venu" />
-            <div class="venu-content">
-              <h5>War History</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2 col-sm-6 col-xs-6 venu-box">
-          <div class="venu-image-block">
-            <img src="<?= base_url() ?>dist/frontend/images/venu-2.jpg" alt="venu" />
-            <div class="venu-content">
-              <h5>Classical Art</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2 col-sm-6 col-xs-6 venu-box">
-          <div class="venu-image-block">
-            <img src="<?= base_url() ?>dist/frontend/images/venu-3.jpg" alt="venu" />
-            <div class="venu-content">
-              <h5>Gardens</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2 col-sm-6 col-xs-6 venu-box">
-          <div class="venu-image-block">
-            <img src="<?= base_url() ?>dist/frontend/images/venu-4.jpg" alt="venu" />
-            <div class="venu-content">
-              <h5>Arts of Asia</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2 col-sm-6 col-xs-6 venu-box">
-          <div class="venu-image-block">
-            <img src="<?= base_url() ?>dist/frontend/images/venu-5.jpg" alt="venu" />
-            <div class="venu-content">
-              <h5>Kings of History</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2 col-sm-6 col-xs-6 venu-box">
-          <div class="venu-image-block">
-            <img src="<?= base_url() ?>dist/frontend/images/venu-6.jpg" alt="venu" />
-            <div class="venu-content">
-              <h5>Vintage Arts</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2 col-sm-6 col-xs-6 venu-box">
-          <div class="venu-image-block">
-            <img src="<?= base_url() ?>dist/frontend/images/venu-7.jpg" alt="venu" />
-            <div class="venu-content">
-              <h5>Arts of Asia</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2 col-sm-6 col-xs-6 venu-box">
-          <div class="venu-image-block">
-            <img src="<?= base_url() ?>dist/frontend/images/venu-8.jpg" alt="venu" />
-            <div class="venu-content">
-              <h5>German Arts</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2 col-sm-6 col-xs-6 venu-box">
-          <div class="venu-image-block">
-            <img src="<?= base_url() ?>dist/frontend/images/venu-9.jpg" alt="venu" />
-            <div class="venu-content">
-              <h5>War History</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2 col-sm-6 col-xs-6 venu-box">
-          <div class="venu-image-block">
-            <img src="<?= base_url() ?>dist/frontend/images/venu-10.jpg" alt="venu" />
-            <div class="venu-content">
-              <h5>Decorative Art</h5>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div class="container-fluid no-padding latest-blog-section">
     <div class="container">
       <div class="section-header">
-        <h3><b>Berita</b><span>Terakhir <span>BERITA</span></span></h3>
+        <h3><b>Berita</b><span><span>BERITA TERAKHIR</span></span></h3>
       </div>
       <div class="row">
         <?php foreach (@$berita as $row) : ?>
