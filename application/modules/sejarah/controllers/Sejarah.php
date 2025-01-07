@@ -15,7 +15,7 @@ class Sejarah extends MY_Controller
       'm_sejarah'
     ));
 
-    $this->menu_id = '92';
+    $this->menu_id = '05';
     $this->menu = $this->m_config->get_menu($this->menu_id);
     if ($this->menu == null) redirect(site_url() . '/error/error_403');
 
@@ -43,9 +43,8 @@ class Sejarah extends MY_Controller
   {
     ($id == null) ? authorize($this->menu, '_create') : authorize($this->menu, '_update');
     html_escape($data = $this->input->post(null, true));
-    // dd($data);die;
     if (!empty($_FILES["image_thumbnail"]["name"])) {
-      $data['image_thumbnail'] = $this->_uploadImage();
+      $data['image_thumbnail'] = $this->_uploadImage(@$data['old_image_thumbnail']);
     } else {
       $data['image_thumbnail'] = $data['old_image_thumbnail'];
     }
@@ -56,7 +55,7 @@ class Sejarah extends MY_Controller
     redirect(site_url() . '/' . $this->menu['controller'] . '/' . $this->menu['url'] . '/' . $this->cookie['cur_page']);
   }
 
-  private function _uploadImage()
+  private function _uploadImage($old_images = null)
   {
     $config['upload_path']          = FCPATH . '/images/sejarah/';
     $config['allowed_types']        = 'gif|jpg|png|jpeg|bmp|svg';
@@ -68,6 +67,10 @@ class Sejarah extends MY_Controller
     $this->load->library('upload', $config);
 
     if ($this->upload->do_upload('image_thumbnail')) {
+      if (@$old_images != '' || @$old_images != null) {
+        $url_gambar_lama = FCPATH . '/images/sejarah/'.@$old_images;
+        unlink(@$url_gambar_lama);
+      }
       return $this->upload->data("file_name");
     } else {
       var_dump($this->upload->display_errors());
