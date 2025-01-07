@@ -21,14 +21,14 @@
     <div class="row blog-listing">
       <!-- Content Area -->
 
-      <div class="col-md-12 col-sm-6 col-xs-6 content-area">
+      <div class="col-md-10 col-sm-6 col-xs-6 content-area">
         <?php
 
 
         foreach (@$main as $row) : ?>
           <article class="type-post">
             <div class="entry-cover">
-              <a href="javascript:void(0)"><img width="100%" src="<?= base_url() ?>/images/berita/<?= @$row['berita_image'] ?>" height="70%" alt="Blog" /></a>
+              <a href="javascript:void(0)"><img width="60%" src="<?= base_url() ?>/images/berita/<?= @$row['berita_image'] ?>"  alt="Blog" /></a>
             </div>
             <div class="entry-header">
               <div class="title-block">
