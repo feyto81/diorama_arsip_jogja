@@ -21,7 +21,7 @@
     <div class="row blog-listing">
       <!-- Content Area -->
 
-      <div class="col-md-8 col-sm-6 col-xs-6 content-area">
+      <div class="col-md-12 col-sm-6 col-xs-6 content-area">
         <?php
 
 
