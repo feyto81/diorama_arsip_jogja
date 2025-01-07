@@ -108,6 +108,12 @@
                     <img src="<?= base_url() ?>images/logos/<?= @$main['logo'] ?>" class="img-thumbnail mt-3 mb-3" style="max-height:150px" alt="User Image">
                   </div>
                 </div>
+                <div class="form-group row">
+                  <label for="menu" class="col-sm-2 col-form-label text-right">Alamat Maps</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control form-control-sm" name="maps_marker" id="maps_marker" value="<?= @$main['maps_marker'] ?>">
+                  </div>
+                </div>
               </div>
               <div class="card-footer">
                 <div class="row">
