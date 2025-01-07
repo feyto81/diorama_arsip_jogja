@@ -60,6 +60,7 @@ class Profile extends MY_Controller
     $config['overwrite']            = true;
     $config['max_size']             = 2048;
 
+    // dd($_POST);die;  
     $this->load->library('upload', $config);
 
     if ($this->upload->do_upload('logo')) {
