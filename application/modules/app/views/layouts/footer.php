@@ -1,5 +1,5 @@
 <footer class="footer-main container-fluid no-padding">
- 
+
   <div class="container-fluid no-padding footer-section">
     <div class="container">
       <div class="row">
@@ -42,7 +42,7 @@
       </div>
     </div>
     <div class="container-fluid no-padding btm-ftr">
-      <p><i class="fa fa-copyright"></i> <?= date('Y') ?> Diorama Arsip Jogja. All Rights Reserved</p>
+      <p><i class="fa fa-copyright"></i> <?= @$identitas['start_year'] ?> Versi <?= @$identitas['version'] ?> <?= @$identitas['app_name'] ?>. All Rights Reserved</p>
     </div>
   </div>
 </footer>
