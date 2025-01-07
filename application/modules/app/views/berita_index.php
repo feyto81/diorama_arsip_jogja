@@ -28,7 +28,7 @@
         foreach (@$main as $row) : ?>
           <article class="type-post">
             <div class="entry-cover">
-              <a href="javascript:void(0)"><img src="<?= base_url() ?>/images/berita/<?= @$row['berita_image'] ?>" alt="Blog" /></a>
+              <a href="javascript:void(0)"><img width="100%" src="<?= base_url() ?>/images/berita/<?= @$row['berita_image'] ?>" alt="Blog" /></a>
             </div>
             <div class="entry-header">
               <div class="title-block">
