@@ -28,11 +28,11 @@
         foreach (@$main as $row) : ?>
           <article class="type-post">
             <div class="entry-cover">
-              <a href="#"><img src="<?= base_url() ?>/images/berita/<?= @$row['berita_image'] ?>" alt="Blog" /></a>
+              <a href="javascript:void(0)"><img src="<?= base_url() ?>/images/berita/<?= @$row['berita_image'] ?>" alt="Blog" /></a>
             </div>
             <div class="entry-header">
               <div class="title-block">
-                <h3><a href="#" title="<?= @$row['berita_title'] ?>"><?= @$row['berita_title'] ?></a></h3>
+                <h3><a href="javascript:void(0)" title="<?= @$row['berita_title'] ?>"><?= @$row['berita_title'] ?></a></h3>
                 <div class="author">
                   <span>by <a href="javascript:void(0)" title="<?= @$row['berita_author'] ?>"><?= @$row['berita_author'] ?></a></span>
                 </div>
