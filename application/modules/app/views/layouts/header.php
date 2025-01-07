@@ -61,7 +61,7 @@
         <div class="container">
           <div class="col-md-12 col-sm-12 col-xs-12 no-padding logo-block">
             <div class="col-md-4 h-logo">
-              <a href="index.html" title="Logo"><img src="<?= base_url() ?>dist/frontend/images/logo.jpg" style="height:60px;" alt="Logo" /></a>
+              <a href="<?= site_url('app/home') ?>" title="Logo"><img src="<?= base_url() ?>dist/frontend/images/logo.jpg" style="height:60px;" alt="Logo" /></a>
             </div>
             <div class="col-md-8 col-sm-12 col-xs-12 cnt-content">
               <div class="cnt-detail">
