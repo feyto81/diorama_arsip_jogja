@@ -75,6 +75,11 @@ class M_berita extends CI_Model
   public function delete($id, $permanent = true)
   {
     if ($permanent) {
+      $get_berita = $this->db->query("SELECT * FROM dat_berita WHERE berita_id = '" . @$id . "'")->row_array();
+      if (@$get_berita['berita_image'] != '' || @$get_berita['berita_image'] != null) {
+        $url_gambar_lama = FCPATH . '/images/berita/' . @$get_berita['berita_image'];
+        unlink(@$url_gambar_lama);
+      }
       $this->db->where('berita_id', $id)->delete('dat_berita');
     } else {
       $data['deleted_st'] = 1;
