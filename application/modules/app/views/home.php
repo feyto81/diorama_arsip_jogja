@@ -384,82 +384,20 @@
     <div class="section-header">
       <h3><b>GALERI</b><span></span></h3>
     </div>
-    <div class="gallery-category">
-      <ul id="filters">
-        <li><a data-filter="*" class="active" href="#" title="All">All</a></li>
-        <li><a data-filter=".modern" href="#" title="Modern art">modern art</a></li>
-        <li><a data-filter=".vintage" href="#" title="Vintage art">vintage art </a></li>
-        <li><a data-filter=".statue" href="#" title="Ancient statue">ancient statue</a></li>
-        <li><a data-filter=".others" href="#" title="Others">Others</a></li>
-      </ul>
-    </div>
+
     <div class="gallery-list gallery-fitrow">
-      <div class="gallery-box col-md-4 col-sm-4 col-xs-6 no-padding modern others">
-        <img src="<?= base_url() ?>dist/frontend/images/gallery1.jpg" alt="Gallery" />
-        <div class="gallery-content">
-          <h3>Classical Art</h3>
-          <img src="<?= base_url() ?>dist/frontend/images/gallery-title-seprator.png" alt="Arrow" />
-          <span>
-            <a href="#" title="Link"><i class="icon icon-Linked"></i></a>
-            <a class="zoom" href="<?= base_url() ?>dist/frontend/images/gallery1.jpg" title="zoom"><i class="icon icon-Search"></i></a>
-          </span>
+      <?php foreach (@$galeri as $row) : ?>
+        <div class="gallery-box col-md-4 col-sm-4 col-xs-6 no-padding modern others">
+          <img src="<?= base_url() ?>images/galeri/<?= @$row['galeri_image'] ?>" alt="Gallery" />
+          <div class="gallery-content">
+            <h3><?= @$row['galeri_title'] ?></h3>
+            <img src="<?= base_url() ?>dist/frontend/images/gallery-title-seprator.png" alt="Arrow" />
+            <span>
+              <a class="zoom" href="<?= base_url() ?>images/galeri/<?= @$row['galeri_image'] ?>" title="zoom"><i class="icon icon-Search"></i></a>
+            </span>
+          </div>
         </div>
-      </div>
-      <div class="gallery-box col-md-4 col-sm-4 col-xs-6 no-padding vintage statue">
-        <img src="<?= base_url() ?>dist/frontend/images/gallery2.jpg" alt="Gallery" />
-        <div class="gallery-content">
-          <h3>Classical Art</h3>
-          <img src="<?= base_url() ?>dist/frontend/images/gallery-title-seprator.png" alt="Arrow" />
-          <span>
-            <a href="#" title="Link"><i class="icon icon-Linked"></i></a>
-            <a class="zoom" href="<?= base_url() ?>dist/frontend/images/gallery2.jpg" title="zoom"><i class="icon icon-Search"></i></a>
-          </span>
-        </div>
-      </div>
-      <div class="gallery-box col-md-4 col-sm-4 col-xs-6 no-padding statue">
-        <img src="<?= base_url() ?>dist/frontend/images/gallery3.jpg" alt="Gallery" />
-        <div class="gallery-content">
-          <h3>Classical Art</h3>
-          <img src="<?= base_url() ?>dist/frontend/images/gallery-title-seprator.png" alt="Arrow" />
-          <span>
-            <a href="#" title="Link"><i class="icon icon-Linked"></i></a>
-            <a class="zoom" href="images/gallery3.jpg" title="zoom"><i class="icon icon-Search"></i></a>
-          </span>
-        </div>
-      </div>
-      <div class="gallery-box col-md-4 col-sm-4 col-xs-6 no-padding others">
-        <img src="<?= base_url() ?>dist/frontend/images/gallery4.jpg" alt="Gallery" />
-        <div class="gallery-content">
-          <h3>Classical Art</h3>
-          <img src="<?= base_url() ?>dist/frontend/images/gallery-title-seprator.png" alt="Arrow" />
-          <span>
-            <a href="#" title="Link"><i class="icon icon-Linked"></i></a>
-            <a class="zoom" href="<?= base_url() ?>dist/frontend/images/gallery4.jpg" title="zoom"><i class="icon icon-Search"></i></a>
-          </span>
-        </div>
-      </div>
-      <div class="gallery-box col-md-4 col-sm-4 col-xs-6 no-padding vintage">
-        <img src="<?= base_url() ?>dist/frontend/images/gallery5.jpg" alt="Gallery" />
-        <div class="gallery-content">
-          <h3>Classical Art</h3>
-          <img src="<?= base_url() ?>dist/frontend/images/gallery-title-seprator.png" alt="Arrow" />
-          <span>
-            <a href="#" title="Link"><i class="icon icon-Linked"></i></a>
-            <a class="zoom" href="<?= base_url() ?>dist/frontend/images/gallery5.jpg" title="zoom"><i class="icon icon-Search"></i></a>
-          </span>
-        </div>
-      </div>
-      <div class="gallery-box col-md-4 col-sm-4 col-xs-6 no-padding modern">
-        <img src="<?= base_url() ?>dist/frontend/images/gallery6.jpg" alt="Gallery" />
-        <div class="gallery-content">
-          <h3>Classical Art</h3>
-          <img src="<?= base_url() ?>dist/frontend/images/gallery-title-seprator.png" alt="Arrow" />
-          <span>
-            <a href="#" title="Link"><i class="icon icon-Linked"></i></a>
-            <a class="zoom" href="<?= base_url() ?>dist/frontend/images/gallery6.jpg" title="zoom"><i class="icon icon-Search"></i></a>
-          </span>
-        </div>
-      </div>
+      <?php endforeach; ?>
     </div>
   </div>
 </main>

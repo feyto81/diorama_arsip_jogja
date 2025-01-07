@@ -10,6 +10,7 @@ class Home extends MX_Controller
       'app/m_app',
       'sejarah/m_sejarah',
       'berita/m_berita',
+      'galeri/m_galeri'
     ]);
   }
 
@@ -18,6 +19,7 @@ class Home extends MX_Controller
     $data['identitas'] = @$this->m_app->identitas_get();
     $data['sejarah'] = @$this->m_sejarah->get_first();
     $data['berita'] = @$this->m_berita->berita_list();
+    $data['galeri'] = @$this->m_galeri->galeri_list();
     $this->load->view('app/layouts/header', $data);
     $this->load->view('app/home', $data);
     $this->load->view('app/layouts/footer', $data);

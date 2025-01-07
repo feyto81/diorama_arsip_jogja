@@ -83,4 +83,9 @@ class M_galeri extends CI_Model
       $this->db->where('galeri_id', $id)->update('dat_galeri', $data);
     }
   }
+
+  public function galeri_list()
+  {
+    return $this->db->query("SELECT * FROM dat_galeri")->result_array();
+  }
 }
