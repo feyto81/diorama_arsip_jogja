@@ -14,10 +14,17 @@ class M_sejarah extends CI_Model
     $this->db->update('sejarah', $data);
   }
 
-  public function save($data)
+  public function save($data, $id = null)
   {
-    $data['updated_at'] = date('Y-m-d H:i:s');
-    $data['updated_by'] = $this->session->userdata('user_fullname');
-    $this->db->update('sejarah', $data);
+    if (@$id == '' || @$id == null) {
+      @$data['sejarah_id'] = 1;
+      $data['updated_at'] = date('Y-m-d H:i:s');
+      $data['updated_by'] = $this->session->userdata('user_fullname');
+      $this->db->insert('sejarah', $data);
+    } else {
+      $data['updated_at'] = date('Y-m-d H:i:s');
+      $data['updated_by'] = $this->session->userdata('user_fullname');
+      $this->db->update('sejarah', $data);
+    }
   }
 }

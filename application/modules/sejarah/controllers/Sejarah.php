@@ -43,122 +43,37 @@ class Sejarah extends MY_Controller
   {
     ($id == null) ? authorize($this->menu, '_create') : authorize($this->menu, '_update');
     html_escape($data = $this->input->post(null, true));
-    if (!isset($data['active_st'])) {
-      $data['active_st'] = 0;
-    }
-    $cek = $this->m_role->by_field('role_name', $data['role_name']);
-    if ($id == null) {
-      if ($cek != null) {
-        $this->session->set_flashdata('flash_error', 'Nama sudah ada di sistem.');
-        redirect(site_url() . '/' .  $this->menu['controller']  . '/form/');
-      }
-      $data['role_id'] = $this->uuid->v4();
-      $this->m_role->save($data, $id);
-      create_log('fb49e2c1-a762-4a34-8e2c-c8fab48814f4', $this->menu['menu_name']);
-      $this->session->set_flashdata('flash_success', 'Data berhasil ditambahkan.');
+    // dd($data);die;
+    if (!empty($_FILES["image_thumbnail"]["name"])) {
+      $data['image_thumbnail'] = $this->_uploadImage();
     } else {
-      if ($data['old'] != $data['role_name'] && $cek != null) {
-        $this->session->set_flashdata('flash_error', 'Nama sudah ada di sistem.');
-        redirect(site_url() . '/' . $this->menu['controller'] . '/form/' . $id);
-      }
-      unset($data['old']);
-      $this->m_role->save($data, $id);
-      create_log('ea565e8b-ef41-4ff6-a254-e9a682e278bc', $this->menu['menu_name']);
-      $this->session->set_flashdata('flash_success', 'Data berhasil diubah.');
+      $data['image_thumbnail'] = $data['old_image_thumbnail'];
     }
+    unset($data['old_image_thumbnail']);
+    $this->m_sejarah->save($data, $id);
+    create_log('ea565e8b-ef41-4ff6-a254-e9a682e278bc', $this->menu['menu_name']);
+    $this->session->set_flashdata('flash_success', 'Data berhasil diubah.');
     redirect(site_url() . '/' . $this->menu['controller'] . '/' . $this->menu['url'] . '/' . $this->cookie['cur_page']);
   }
 
-  public function delete($id = null)
+  private function _uploadImage()
   {
-    ($id == null) ? authorize($this->menu, '_create') : authorize($this->menu, '_update');
-    $this->m_role->delete($id);
-    create_log('d6d0ec35-3952-4f22-a7dd-609aea350a41', $this->menu['menu_name']);
-    $this->session->set_flashdata('flash_success', 'Data berhasil dihapus.');
-    redirect(site_url() . '/' . $this->menu['controller'] . '/' . $this->menu['url'] . '/' . $this->cookie['cur_page']);
-  }
+    $config['upload_path']          = FCPATH . '/images/sejarah/';
+    $config['allowed_types']        = 'gif|jpg|png|jpeg|bmp|svg';
+    $config['encrypt_name']         = true;
+    $config['overwrite']            = true;
+    $config['max_size']             = 2048;
 
-  public function status($type = null, $id = null)
-  {
-    authorize($this->menu, '_update');
-    if ($type == 'enable') {
-      $this->m_role->update($id, array('active_st' => 1));
+    // dd($_POST);die;  
+    $this->load->library('upload', $config);
+
+    if ($this->upload->do_upload('image_thumbnail')) {
+      return $this->upload->data("file_name");
     } else {
-      $this->m_role->update($id, array('active_st' => 0));
+      var_dump($this->upload->display_errors());
+      die();
     }
-    create_log('ea565e8b-ef41-4ff6-a254-e9a682e278bc', $this->this->menu['menu_name']);
-    redirect(site_url() . '/' . $this->menu['controller'] . '/' . $this->menu['url'] . '/' . $this->cookie['cur_page']);
-  }
 
-  public function multiple($type = null)
-  {
-    $data = $this->input->post(null, true);
-    if (isset($data['checkitem'])) {
-      foreach ($data['checkitem'] as $key) {
-        switch ($type) {
-          case 'delete':
-            authorize($this->menu, '_delete');
-            $this->m_role->delete($key);
-            $flash = 'Data berhasil dihapus.';
-            $t = 4;
-            break;
-
-          case 'enable':
-            authorize($this->menu, '_update');
-            $this->m_role->update($key, array('active_st' => 1));
-            $flash = 'Data berhasil diaktifkan.';
-            $t = 3;
-            break;
-
-          case 'disable':
-            authorize($this->menu, '_update');
-            $this->m_role->update($key, array('active_st' => 0));
-            $flash = 'Data berhasil dinonaktifkan.';
-            $t = 3;
-            break;
-        }
-      }
-    }
-    create_log($t, $this->menu['menu_name']);
-    $this->session->set_flashdata('flash_success', $flash);
-    redirect(site_url() . '/' . $this->menu['controller'] . '/' . $this->menu['url'] . '/' . $this->cookie['cur_page']);
-  }
-
-  public function authorization($id = null)
-  {
-    ($id == null) ? authorize($this->menu, '_create') : authorize($this->menu, '_update');
-    if ($id == null) {
-      create_log('fb49e2c1-a762-4a34-8e2c-c8fab48814f4', $this->menu['menu_name']);
-      $data['main'] = null;
-    } else {
-      create_log('ea565e8b-ef41-4ff6-a254-e9a682e278bc', $this->menu['menu_name']);
-      $data['main'] = $this->m_role->by_field('role_id', $id);
-    }
-    $data['id'] = $id;
-    $data['menu'] = $this->menu;
-    $data['menu_list'] = $this->m_role->menu_list($id);
-    $this->render('authorization', $data);
-  }
-
-  public function authorization_save($id)
-  {
-    $data = html_escape($this->input->post());
-    $this->m_role->authorization_save($data, $id);
-    $this->session->set_flashdata('flash_success', "Data berhasil disimpan");
-    redirect(site_url() . '/' . $this->menu['controller'] . '/' . $this->menu['url'] . '/' . $this->cookie['cur_page']);
-  }
-
-  public function ajax($type = null, $id = null)
-  {
-    if ($type == 'check_id') {
-      $data = $this->input->post();
-      $cek = $this->m_role->by_field('role_name', $data['role_name']);
-      $old = $this->m_role->by_field('role_id', $id);
-      if ($id == null) {
-        echo ($cek != null) ? 'false' : 'true';
-      } else {
-        echo ($cek != null) ? (($cek['role_name'] == $old['role_name']) ? 'true' : 'false') : 'true';
-      }
-    }
+    return "logo.png";
   }
 }
