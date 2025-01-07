@@ -75,6 +75,11 @@ class M_galeri extends CI_Model
   public function delete($id, $permanent = true)
   {
     if ($permanent) {
+      $get_galeri = $this->db->query("SELECT * FROM dat_galeri WHERE galeri_id = '" . @$id . "'")->row_array();
+      if (@$get_galeri['galeri_image'] != '' || @$get_galeri['galeri_image'] != null) {
+        $url_gambar_lama = FCPATH . '/images/galeri/' . @$get_galeri['galeri_image'];
+        unlink(@$url_gambar_lama);
+      }
       $this->db->where('galeri_id', $id)->delete('dat_galeri');
     } else {
       $data['deleted_st'] = 1;
