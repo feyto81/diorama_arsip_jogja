@@ -33,6 +33,8 @@
                   <label for="menu" class="col-sm-2 col-form-label text-right">Judul <span class="text-danger">*</span></label>
                   <div class="col-sm-4">
                     <input type="text" class="form-control form-control-sm" name="title" id="title" value="<?= @$main['title'] ?>" required>
+                    <input type="hidden" class="form-control form-control-sm" name="sejarah_id" id="sejarah_id" value="<?= @$main['sejarah_id'] ?>">
+
                   </div>
                 </div>
                 <div class="form-group row">

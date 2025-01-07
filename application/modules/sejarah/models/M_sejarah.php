@@ -16,7 +16,7 @@ class M_sejarah extends CI_Model
 
   public function save($data, $id = null)
   {
-    if (@$id == '' || @$id == null) {
+    if (@$data['sejarah_id'] == '' || @$data['sejarah_id'] == null) {
       @$data['sejarah_id'] = 1;
       $data['updated_at'] = date('Y-m-d H:i:s');
       $data['updated_by'] = $this->session->userdata('user_fullname');
