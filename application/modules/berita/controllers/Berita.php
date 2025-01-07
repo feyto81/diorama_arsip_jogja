@@ -64,11 +64,16 @@ class Berita extends MY_Controller
   {
     ($id == null) ? authorize($this->menu, '_create') : authorize($this->menu, '_update');
     html_escape($data = $this->input->post(null, true));
-    unset($data['files'], $data['old_berita_image']);
     if (!isset($data['active_st'])) {
       $data['active_st'] = 0;
     }
-    $data['berita_image'] = $this->_uploadImage();
+    if (!empty($_FILES["berita_image"]["name"])) {
+      $data['berita_image'] = $this->_uploadImage($data['old_berita_image']);
+    } else {
+      $data['berita_image'] = $data['old_berita_image'];
+    }
+    unset($data['old_berita_image']);
+
     $data['berita_date'] = to_date($data['berita_date'], '', 'full_date');
     if ($id == null) {
       $cek = $this->m_berita->by_field('berita_title', $data['berita_title']);
@@ -102,7 +107,7 @@ class Berita extends MY_Controller
     redirect(site_url() . '/' . $this->menu['controller'] . '/' . $this->menu['url'] . '/' . $this->cookie['cur_page']);
   }
 
-  private function _uploadImage()
+  private function _uploadImage($oldimages)
   {
     $config['upload_path']          = FCPATH . '/images/berita/';
     $config['allowed_types']        = '*';
@@ -113,6 +118,10 @@ class Berita extends MY_Controller
     $this->load->library('upload', $config);
 
     if ($this->upload->do_upload('berita_image')) {
+      if (@$oldimages != '' || @$oldimages != null) {
+        $url_gambar_lama = FCPATH . '/images/berita/' . @$oldimages;
+        unlink(@$url_gambar_lama);
+      }
       return $this->upload->data("file_name");
     } else {
       var_dump($this->upload->display_errors());
