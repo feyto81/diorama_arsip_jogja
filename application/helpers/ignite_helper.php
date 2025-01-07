@@ -259,3 +259,276 @@ if (!function_exists('dd')) {
     die;
   }
 }
+
+if (!function_exists('get_bulan')) {
+  function get_bulan($bln)
+  {
+    switch ($bln) {
+      case 1:
+        return "Januari";
+        break;
+      case 2:
+        return "Februari";
+        break;
+      case 3:
+        return "Maret";
+        break;
+      case 4:
+        return "April";
+        break;
+      case 5:
+        return "Mei";
+        break;
+      case 6:
+        return "Juni";
+        break;
+      case 7:
+        return "Juli";
+        break;
+      case 8:
+        return "Agustus";
+        break;
+      case 9:
+        return "September";
+        break;
+      case 10:
+        return "Oktober";
+        break;
+      case 11:
+        return "November";
+        break;
+      case 12:
+        return "Desember";
+        break;
+    }
+  }
+}
+if (!function_exists('get_bulan_v2')) {
+  function get_bulan_v2($bln)
+  {
+    switch ($bln) {
+      case '01':
+        return "Januari";
+        break;
+      case '02':
+        return "Februari";
+        break;
+      case '03':
+        return "Maret";
+        break;
+      case '04':
+        return "April";
+        break;
+      case '05':
+        return "Mei";
+        break;
+      case '06':
+        return "Juni";
+        break;
+      case '07':
+        return "Juli";
+        break;
+      case '08':
+        return "Agustus";
+        break;
+      case '09':
+        return "September";
+        break;
+      case '10':
+        return "Oktober";
+        break;
+      case '11':
+        return "November";
+        break;
+      case '12':
+        return "Desember";
+        break;
+    }
+  }
+}
+
+if (!function_exists('get_bulan_v3')) {
+  function get_bulan_v3($tanggal)
+  {
+    $bulan = date('m', strtotime($tanggal));
+
+    switch ($bulan) {
+      case '01':
+        return "Januari";
+      case '02':
+        return "Februari";
+      case '03':
+        return "Maret";
+      case '04':
+        return "April";
+      case '05':
+        return "Mei";
+      case '06':
+        return "Juni";
+      case '07':
+        return "Juli";
+      case '08':
+        return "Agustus";
+      case '09':
+        return "September";
+      case '10':
+        return "Oktober";
+      case '11':
+        return "November";
+      case '12':
+        return "Desember";
+      default:
+        return "Bulan tidak valid";
+    }
+  }
+}
+
+if (!function_exists('get_bulan_singkat')) {
+  function get_bulan_singkat($bln)
+  {
+    switch ($bln) {
+      case 1:
+        return "Jan";
+        break;
+      case 2:
+        return "Feb";
+        break;
+      case 3:
+        return "Mar";
+        break;
+      case 4:
+        return "Apr";
+        break;
+      case 5:
+        return "Mei";
+        break;
+      case 6:
+        return "Jun";
+        break;
+      case 7:
+        return "Jul";
+        break;
+      case 8:
+        return "Agus";
+        break;
+      case 9:
+        return "Sep";
+        break;
+      case 10:
+        return "Okt";
+        break;
+      case 11:
+        return "Nov";
+        break;
+      case 12:
+        return "Des";
+        break;
+    }
+  }
+}
+
+
+if (!function_exists('to_date')) {
+  function to_date($date = null, $sp = null, $tp = null, $sp2 = null)
+  {
+    if ($date != '' && $date != null) {
+      if ($tp == 'date') {
+        $arr_date = explode(' ', $date);
+        $date = $arr_date[0];
+      } elseif ($tp == 'full_date') {
+        $arr_date = explode(' ', $date);
+        $date = $arr_date[0];
+        $time = $arr_date[1];
+      } elseif ($tp == 'time') {
+        $arr_date = explode(' ', $date);
+        $time = $arr_date[1];
+      } elseif ($tp == 'hour_minute') {
+        $arr_date = explode(' ', $date);
+        $time = $arr_date[1];
+        $arr_time = explode(':', $time);
+        $hour = @$arr_time[0];
+        $minute = @$arr_time[1];
+      } elseif ($tp == 'only_day_month_name') {
+        $arr_date = explode(' ', $date);
+        $date = $arr_date[0];
+      } elseif ($tp == 'only_year') {
+        $arr_date = explode(' ', $date);
+        $date = $arr_date[0];
+      } elseif ($tp == 'only_day') {
+        $arr_date = explode(' ', $date);
+        $date = $arr_date[0];
+      } elseif ($tp == 'date_hour_minute') {
+        $arr_date = explode(' ', $date);
+        $date = $arr_date[0];
+        $time = $arr_date[1];
+        $arr_time = explode(':', $time);
+        $hour = @$arr_time[0];
+        $minute = @$arr_time[1];
+      }
+      $arr = explode('-', $date);
+      if (@$arr[2] == '') {
+        $arr = explode('/', $date);
+      }
+      if ($sp != '') {
+        $result = $arr[2] . $sp . $arr[1] . $sp . $arr[0];
+      } else {
+        $result = $arr[2] . '-' . $arr[1] . '-' . $arr[0];
+      }
+      if ($tp == 'full_date') {
+        if ($sp2 != '') {
+          $result .= $sp2 . $time;
+        } else {
+          $result .= ' ' . $time;
+        }
+      }
+      if ($tp == 'time') {
+        $result = $time;
+      }
+      if ($tp == 'hour_minute') {
+        $result = $hour . ':' . $minute;
+      }
+      if ($tp == 'only_year') {
+        $result = $arr[0];
+      }
+      if ($tp == 'only_month') {
+        $result = $arr[1];
+      }
+      if ($tp == 'only_month_name') {
+        $result = get_bulan($arr[1]);
+      }
+      if ($tp == 'only_month_short_name') {
+        $result = get_bulan_singkat($arr[1]);
+      }
+      if ($tp == 'only_day') {
+        $result = $arr[2];
+      }
+      if ($tp == 'only_day_month_name') {
+        if ($sp != null) {
+          $result = $arr[2] . $sp . get_bulan($arr[1]);
+        } else {
+          $result = $arr[2] . '-' . $arr[1];
+        }
+      }
+      if ($tp == 'date_hour_minute') {
+        $result .= ' ' . $hour . ':' . $minute;
+      }
+    } else {
+      $result = null;
+    }
+
+    if ($result == '00-00-0000' || $result == '0000-00-00' || $result == '00-00-0000 00:00:00' || $result == '0000-00-00 00:00:00') {
+      $result = null;
+    }
+
+    return $result;
+  }
+}
+
+if (!function_exists('p_to_space')) {
+  function p_to_space($val = null)
+  {
+    $val = str_replace('<p>', ' ', $val);
+    $val = str_replace('</p>', ' ', $val);
+    return $val;
+  }
+}

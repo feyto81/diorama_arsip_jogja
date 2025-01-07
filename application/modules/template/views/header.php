@@ -31,6 +31,8 @@
   <!-- DataTables -->
   <link rel="stylesheet" href="<?= base_url() ?>plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="<?= base_url() ?>plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <!-- Summernote -->
+  <link rel="stylesheet" href="<?= base_url() ?>plugins/summernote/summernote-bs4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= base_url() ?>dist/css/adminlte.min.css">
   <!-- Custom style -->
@@ -59,6 +61,8 @@
   <script src="<?= base_url() ?>plugins/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
   <!-- Sweetalert2 -->
   <script src="<?= base_url() ?>plugins/sweetalert2/sweetalert2.js"></script>
+  <!-- Summernote -->
+  <script src="<?= base_url() ?>plugins/summernote/summernote-bs4.min.js"></script>
   <!-- Toastr -->
   <script src="<?= base_url() ?>plugins/toastr/toastr.min.js"></script>
   <!-- Chained -->
@@ -80,7 +84,8 @@
 
       //lockscreen
       // setTimeout(function() {
-      //   window.location.replace("<?php // = site_url() . '/auth/locked/lock' ?>");
+      //   window.location.replace("<?php // = site_url() . '/auth/locked/lock' 
+                                    ?>");
       // }, 1000 * 60 * 60);
 
       //sweetalert
@@ -182,6 +187,11 @@
         isInvalidDate: function(date) {
           return '';
         }
+      })
+
+      //Add text editor
+      $('#compose-textarea').summernote({
+        height: 300,
       })
 
     })
