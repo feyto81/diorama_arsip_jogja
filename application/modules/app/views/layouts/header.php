@@ -101,7 +101,6 @@
               <ul class="nav navbar-nav">
                 <li><a href="<?= site_url('app/home') ?>" title="Home">Home</a></li>
                 <li><a href="<?= site_url('app/tentang_kami') ?>" title="Tentang Kami">Tentang Kami</a></li>
-                <li><a href="javascript:void(0)" title="Kegiatan">Kegiatan</a></li>
                 <li><a href="<?= site_url('app/galeri') ?>" title="Galeri">Galeri</a></li>
                 <li><a href="<?= site_url('app/berita') ?>" title="Berita">Berita</a></li>
                 <li><a href="contactus.html" title="Kontak Kami">Kontak Kami</a></li>
