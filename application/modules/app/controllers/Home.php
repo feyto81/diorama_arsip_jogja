@@ -7,13 +7,15 @@ class Home extends MX_Controller
   {
     parent::__construct();
     $this->load->model([
-      'app/m_app'
+      'app/m_app',
+      'sejarah/m_sejarah'
     ]);
   }
 
   function index()
   {
     $data['identitas'] = @$this->m_app->identitas_get();
+    $data['sejarah'] = @$this->m_sejarah->get_first();
     $this->load->view('app/layouts/header', $data);
     $this->load->view('app/layouts/home', $data);
     $this->load->view('app/layouts/footer', $data);
