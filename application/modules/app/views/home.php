@@ -294,60 +294,6 @@
     </div>
   </div>
 
-  <div class="container-fluid no-padding event-section">
-    <div class="container">
-      <div class="section-header">
-        <h3><b>Kegiatan</b><span>yang akan datang </span></h3>
-      </div>
-      <div class="row">
-        <div class="col-md-11 col-sm-6 col-xs-6">
-          <div class="events-block">
-            <div class="event-content">
-              <div class="col-md-5 col-sm-12 col-xs-12 no-padding img-block">
-                <a href="#"><img src="<?= base_url() ?>dist/frontend/images/event-sec1.jpg" alt="Event" /></a>
-                <h6><i class="icon icon-Settings"></i> Workshop</h6>
-              </div>
-              <div class="col-md-7 col-sm-12 col-xs-12 events-content">
-                <div class="post-meta">
-                  <div class="post-add"><i class="icon icon-Pointer"></i>California, USA<br /> Christian Central Museum</div>
-                  <div class="post-date"><i class="icon icon-Time"></i> 27 July 2016 - 29 August 2016</div>
-                </div>
-                <h3>A New Classical Art for Christian Central Museum</h3>
-                <p>That's just a little bit more than the law will allow. You wanna be where you can see our troubles are all the same. You wanna about no knows Your name. Why do we always come here? I guess well givup the know. . . .</p>
-                <div class="btn-block">
-                  <a href="#" title="See more details">See more details <i class="fa fa-angle-right"></i></a>
-                  <a href="#" title="Register now">Register now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-11 col-sm-6 col-xs-6">
-          <div class="events-block">
-            <div class="event-content">
-              <div class="col-md-5 col-sm-12 col-xs-12 no-padding img-block">
-                <a href="#"><img src="<?= base_url() ?>dist/frontend/images/event-sec2.jpg" alt="Event" /></a>
-                <h6><i class="icon icon-Eye"></i> Exhibition</h6>
-              </div>
-              <div class="col-md-7 col-sm-12 col-xs-12 events-content">
-                <div class="post-meta">
-                  <div class="post-add"><i class="icon icon-Pointer"></i>California, USA<br /> Christian Central Museum</div>
-                  <div class="post-date"><i class="icon icon-Time"></i> 27 June 2016 - 26 July 2016</div>
-                </div>
-                <h3>Great Fire of Christian Central Museum Family Walk</h3>
-                <p>That's just a little bit more than the law will allow. You wanna be where you can see our troubles are all the same. You wanna about no knows Your name. Why do we always come here? I guess well givup the know. . . .</p>
-                <div class="btn-block">
-                  <a href="#" title="See more details">See more details <i class="fa fa-angle-right"></i></a>
-                  <a href="#" title="Register now">Register now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div class="container-fluid no-padding latest-blog-section">
     <div class="container">
       <div class="section-header">
