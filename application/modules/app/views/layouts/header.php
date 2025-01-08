@@ -94,7 +94,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a href="index.html" class="navbar-brand">Diorama<i>Arsip Jogja</i></a>
+              <a href="<?= site_url('app/home')?>" class="navbar-brand">Diorama<i>Arsip Jogja</i></a>
             </div>
             <!-- Menu Icon -->
             <div class="navbar-collapse collapse" id="navbar">
