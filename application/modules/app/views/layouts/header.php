@@ -11,9 +11,9 @@
   <title><?= @$title ?></title>
 
   <link rel="icon" type="image/x-icon" href="<?= base_url() ?>dist/frontend/images/logo.jpg" />
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?= base_url() ?>dist/frontend/images/apple-touch-icon-114x114-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?= base_url() ?>dist/frontend/images/apple-touch-icon-72x72-precomposed.html">
-  <link rel="apple-touch-icon-precomposed" href="<?= base_url() ?>dist/frontend/images/apple-touch-icon-57x57-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?= base_url() ?>dist/frontend/images/logo.jpg">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?= base_url() ?>dist/frontend/images/logo.jpg">
+  <link rel="apple-touch-icon-precomposed" href="<?= base_url() ?>dist/frontend/images/logo.jpg">
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
