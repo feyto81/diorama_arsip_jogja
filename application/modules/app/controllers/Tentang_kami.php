@@ -17,6 +17,7 @@ class Tentang_kami extends MX_Controller
   {
     $data['identitas'] = @$this->m_app->identitas_get();
     $data['main'] = @$this->m_tentang->get_first();
+    $data['title'] = 'TENTANG KAMI | DIORAMA ARSIP JOGJA';
     $this->load->view('app/layouts/header', $data);
     $this->load->view('app/tentang_detail', $data);
     $this->load->view('app/layouts/footer', $data);

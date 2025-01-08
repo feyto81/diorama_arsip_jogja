@@ -25,6 +25,7 @@ class Berita extends MX_Controller
   {
     $data['identitas'] = @$this->m_app->identitas_get();
     $data['main'] = @$this->m_berita->berita_list();
+    $data['title'] = 'BERITA | DIORAMA ARSIP JOGJA';
     $this->load->view('app/layouts/header', $data);
     $this->load->view('app/berita_index', $data);
     $this->load->view('app/layouts/footer', $data);

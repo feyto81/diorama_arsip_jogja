@@ -17,6 +17,7 @@ class Galeri extends MX_Controller
   {
     $data['identitas'] = @$this->m_app->identitas_get();
     $data['main'] = @$this->m_galeri->galeri_list();
+    $data['title'] = 'GALERI | DIORAMA ARSIP JOGJA';
     $this->load->view('app/layouts/header', $data);
     $this->load->view('app/galeri_list', $data);
     $this->load->view('app/layouts/footer', $data);

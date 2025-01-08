@@ -20,6 +20,7 @@ class Home extends MX_Controller
     $data['sejarah'] = @$this->m_sejarah->get_first();
     $data['berita'] = @$this->m_berita->berita_list();
     $data['galeri'] = @$this->m_galeri->galeri_list();
+    $data['title'] = 'HOME | DIORAMA ARSIP JOGJA';
     $this->load->view('app/layouts/header', $data);
     $this->load->view('app/home', $data);
     $this->load->view('app/layouts/footer', $data);

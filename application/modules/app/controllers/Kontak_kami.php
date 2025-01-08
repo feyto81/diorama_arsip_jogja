@@ -15,6 +15,7 @@ class Kontak_kami extends MX_Controller
   function index()
   {
     $data['identitas'] = @$this->m_app->identitas_get();
+    $data['title'] = 'KONTAK KAMI | DIORAMA ARSIP JOGJA';
     $this->load->view('app/layouts/header', $data);
     $this->load->view('app/kontak_kami', $data);
     $this->load->view('app/layouts/footer', $data);
